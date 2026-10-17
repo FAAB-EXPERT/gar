@@ -15,23 +15,23 @@
   </head>
   <body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-emerald-500 selection:text-white">
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
     <script>
       (function () {
         if (window.location.hostname.endsWith('github.io')) {
-          var rawEntry = document.querySelector('script[src*="src/main.tsx"]');
-          if (rawEntry) {
-            rawEntry.remove();
-            var css = document.createElement('link');
-            css.rel = 'stylesheet';
-            css.href = './bundle/index.css';
-            document.head.appendChild(css);
+          var css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = './bundle/index.css';
+          document.head.appendChild(css);
 
-            var js = document.createElement('script');
-            js.type = 'module';
-            js.src = './bundle/index.js';
-            document.body.appendChild(js);
-          }
+          var js = document.createElement('script');
+          js.type = 'module';
+          js.src = './bundle/index.js';
+          document.body.appendChild(js);
+        } else {
+          var devJs = document.createElement('script');
+          devJs.type = 'module';
+          devJs.src = '/src/main.tsx';
+          document.body.appendChild(devJs);
         }
       })();
     </script>
