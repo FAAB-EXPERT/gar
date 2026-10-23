@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "tsc && vite build && mkdir -p bundle && cp dist/assets/index.js dist/assets/index.css bundle/",
+    "build": "tsc && vite build && mkdir -p bundle && cp -r dist/assets/* bundle/",
     "lint": "tsc --noEmit",
     "preview": "vite preview"
   },
@@ -16,6 +16,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
+    "jspdf": "^4.2.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "react": "^19.0.1",
